@@ -23,8 +23,8 @@ const Home = () => {
                         <td>{user.name}</td>
                         <td>{user.email}</td>
                         <td>
-                            <button type="" className='btn btn-secondary'>Edit</button>
-                            <button type="" className='btn-danger btn'>Delete</button>
+                            <Link to={`edit/${user.id}`} className='btn btn-secondary'>Edit</Link>
+                            <Link to={`delete/${user.id}`} className='btn-danger btn'>Delete</Link>
                         </td>
                     </tr>
                 ))}

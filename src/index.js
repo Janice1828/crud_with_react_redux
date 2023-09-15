@@ -8,6 +8,7 @@ import { BrowserRouter,Route, Routes } from 'react-router-dom';
 import { configureStore } from '@reduxjs/toolkit';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import userReducer from './userReducer';
+import Update from './Update';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store=configureStore({
   reducer:{
@@ -23,8 +24,9 @@ root.render(
       <Routes>
         <Route path="/" Component={Home} exact />
         <Route path="/create" Component={Create} exact /> 
+        <Route path="/edit/:id" Component={Update} exact /> 
       </Routes>
-    
+  
     </Provider>
     </BrowserRouter>
   </React.StrictMode>
