@@ -1,7 +1,9 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 const Home = () => {
+    const dispatch=useDispatch();
+    const handleDelete=(id)=>{}
   const users=useSelector((state)=>state.users);
 //   console.log(users);
     return (
@@ -24,7 +26,7 @@ const Home = () => {
                         <td>{user.email}</td>
                         <td>
                             <Link to={`edit/${user.id}`} className='btn btn-secondary'>Edit</Link>
-                            <Link to={`delete/${user.id}`} className='btn-danger btn'>Delete</Link>
+                            <button onClick={()=>handleDelete(user.id)} className='btn-danger btn'>Delete</button>
                         </td>
                     </tr>
                 ))}
